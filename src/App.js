@@ -6,14 +6,17 @@ import Store from "./Components/Store";
 
 //Context
 import ProductsContextProvide from "./context/ProductsContextProvider";
+import CartContextProvider from "./context/CartContextProvider";
 
 function App() {
   return (
     <ProductsContextProvide>
-      <Routes>
-        <Route path="/products" element={<Store />} />
-        <Route path="/*" element={<Navigate to="/products" />} />
-      </Routes>
+      <CartContextProvider>
+        <Routes>
+          <Route path="/products" element={<Store />} />
+          <Route path="/*" element={<Navigate to="/products" />} />
+        </Routes>
+      </CartContextProvider>
     </ProductsContextProvide>
   );
 }
