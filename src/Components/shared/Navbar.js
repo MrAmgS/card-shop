@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className={styles.container}>
                 <Link to='/products' className={styles.productLink}>Products</Link>
             <div className={styles.iconContainer}>
-                <Link to='/products'>
+                <Link to='/cart'>
                     <img src={shopIcon} alt='shop' />
                 </Link>
                 <span>{state.itemsCounter}</span>

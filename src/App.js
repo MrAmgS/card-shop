@@ -4,11 +4,12 @@ import { Route, Routes, Navigate } from "react-router-dom";
 //Components
 import Store from "./Components/Store";
 import ProductDetail from "./Components/ProductDetail";
+import Navbar from "./Components/shared/Navbar";
+import ShopCart from "./Components/ShopCart";
 
 //Context
 import ProductsContextProvide from "./context/ProductsContextProvider";
 import CartContextProvider from "./context/CartContextProvider";
-import Navbar from "./Components/shared/Navbar";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/products" element={<Store />} />
           <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<ShopCart />} />
           <Route path="/*" element={<Navigate to="/products" />} />
         </Routes>
       </CartContextProvider>
