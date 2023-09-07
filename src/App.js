@@ -8,7 +8,7 @@ import Navbar from "./Components/shared/Navbar";
 import ShopCart from "./Components/ShopCart";
 
 //Redux
-import store from "./Components/redux/store";
+import store from "./redux/store";
 import { Provider } from "react-redux";
 
 
@@ -18,7 +18,7 @@ function App() {
           {/* <Navbar /> */}
         <Routes>
           <Route path="/products" element={<Store />} />
-          {/* <Route path="/products/:id" element={<ProductDetail />} /> */}
+          <Route path="/products/:id" element={<ProductDetail />} />
           {/* <Route path="/cart" element={<ShopCart />} /> */}
           {/* <Route path="/*" element={<Navigate to="/products" />} /> */}
         </Routes>

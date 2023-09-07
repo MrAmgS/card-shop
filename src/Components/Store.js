@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Products from './shared/Products';
 
 // redux
-import { fetchProducts } from '../Components/redux/products/productsAction';
+import { fetchProducts } from '../redux/products/productsAction';
 
 // Style
 import styles from "./Store.module.css";
