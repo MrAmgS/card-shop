@@ -15,12 +15,12 @@ import { Provider } from "react-redux";
 function App() {
   return (
     <Provider store={store}>
-          {/* <Navbar /> */}
+          <Navbar />
         <Routes>
           <Route path="/products" element={<Store />} />
           <Route path="/products/:id" element={<ProductDetail />} />
-          {/* <Route path="/cart" element={<ShopCart />} /> */}
-          {/* <Route path="/*" element={<Navigate to="/products" />} /> */}
+          <Route path="/cart" element={<ShopCart />} />
+          <Route path="/*" element={<Navigate to="/products" />} />
         </Routes>
     </Provider>
 

@@ -1,7 +1,8 @@
-import React,{useContext} from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-//Context
-import { CartContext } from '../../context/CartContextProvider';
+// Actions
+import { removeItem, decrease, increase } from '../../redux/cart/cartAction';
 
 //styles
 import styles from './Cart.module.css';
@@ -14,7 +15,7 @@ import deleteIcon from '../../assets/icons/trash.svg'
 
 const Cart = (props) => {
     const {image ,title, price , quantity} = props.data;
-    const { dispatch } = useContext(CartContext);
+    const dispatch = useDispatch();
 
     return (
         <div className={styles.container}>
@@ -29,10 +30,10 @@ const Cart = (props) => {
             <div className={styles.buttonContainer}>
                 {
                      quantity > 1 ? 
-                     <button onClick = {() => dispatch ({type : "DECREASE" , payload : props.data})}> - </button> :
-                     <button onClick={() => dispatch({type : "REMOVE_ITEM" , payload : props.data})}><img src={deleteIcon} alt="delete" style={{width: "20px"}} /></button>
+                     <button onClick = {() => dispatch (decrease(props.data))}> - </button> :
+                     <button onClick={() => dispatch(removeItem(props.data))}><img src={deleteIcon} alt="delete" style={{width: "20px"}} /></button>
                 }
-                <button onClick={() => dispatch({type :"INCREASE" , payload : props.data})}> + </button>
+                <button onClick={() => dispatch(increase(props.data))}> + </button>
                 
             </div>
         </div>
