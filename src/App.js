@@ -7,23 +7,23 @@ import ProductDetail from "./Components/ProductDetail";
 import Navbar from "./Components/shared/Navbar";
 import ShopCart from "./Components/ShopCart";
 
-//Context
-import ProductsContextProvide from "./context/ProductsContextProvider";
-import CartContextProvider from "./context/CartContextProvider";
+//Redux
+import store from "./Components/redux/store";
+import { Provider } from "react-redux";
+
 
 function App() {
   return (
-    <ProductsContextProvide>
-      <CartContextProvider>
-        <Navbar />
+    <Provider store={store}>
+          {/* <Navbar /> */}
         <Routes>
           <Route path="/products" element={<Store />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<ShopCart />} />
-          <Route path="/*" element={<Navigate to="/products" />} />
+          {/* <Route path="/products/:id" element={<ProductDetail />} /> */}
+          {/* <Route path="/cart" element={<ShopCart />} /> */}
+          {/* <Route path="/*" element={<Navigate to="/products" />} /> */}
         </Routes>
-      </CartContextProvider>
-    </ProductsContextProvide>
+    </Provider>
+
   );
 }
 
